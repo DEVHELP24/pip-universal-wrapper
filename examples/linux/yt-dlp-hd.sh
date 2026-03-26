@@ -30,6 +30,6 @@ fi
 # Loop through other parameters and execute command
 for item in "${items[@]}"; do
    which yt-dlp > /dev/null && yt-dlp --ignore-errors -f "bestvideo[height<=1080]+bestaudio/best[height<=480]" --remux-video mp4 \
-        --output '%(title)s.%(ext)s' --paths "$OUTDIR" "$item" || python3 pip-universal-wrapper.py --exec yt-dlp -f "bestvideo[height<=1080]+bestaudio/best[height<=480]" --remux-video mp4 \ \
+        --output '%(title)s.%(ext)s' --paths "$OUTDIR" "$item" || python3 pip-universal-wrapper.py --exec yt-dlp -f "bestvideo[height<=1080]+bestaudio/best[height<=480]" --remux-video mp4 \
         --output '%(title)s.%(ext)s' --paths "$OUTDIR" "$item"
 done
